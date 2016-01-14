@@ -1,11 +1,11 @@
 //extending properties saves you from having to add each one individually.
 
-var giraffeMaker = function(name, height) {
+var GiraffeMaker = function(name, height) {
   var newGiraffe = {};
   newGiraffe.name = name;
   newGiraffe.height = height;
   newGiraffe.hunger = 10;
-  extend(newGiraffe, giraffeMaker.giraffeMethods);
+  extend(newGiraffe, GiraffeMaker.giraffeMethods);
 
   return newGiraffe;
 };
@@ -16,18 +16,18 @@ var extend = function(to, from) {
   }
 };
 
-giraffeMaker.giraffeMethods = {};
+GiraffeMaker.giraffeMethods = {};
 
 
-giraffeMaker.giraffeMethods.isTallEnough = function(treeHeight) {
+GiraffeMaker.giraffeMethods.isTallEnough = function(treeHeight) {
     return this.height > treeHeight;
   };
 
-giraffeMaker.giraffeMethods.isHungry = function() {
+GiraffeMaker.giraffeMethods.isHungry = function() {
   return this.hunger > 0;
 };
 
-giraffeMaker.giraffeMethods.say = function(option) {
+GiraffeMaker.giraffeMethods.say = function(option) {
   var sentences = {
     'greet': 'Hello, my name is ' + this.name + ', it is nice to meet you.',
     'notHungry': this.name + ' is not hungry.',
@@ -38,7 +38,7 @@ giraffeMaker.giraffeMethods.say = function(option) {
   return console.log(sentences[option]);
 };
 
-giraffeMaker.giraffeMethods.eat = function() {
+GiraffeMaker.giraffeMethods.eat = function() {
   if (this.isHungry()) {
     this.hunger -= this.height;
     this.say('ate');
@@ -47,7 +47,7 @@ giraffeMaker.giraffeMethods.eat = function() {
   }
 };
 
-giraffeMaker.giraffeMethods.browse = function() {
+GiraffeMaker.giraffeMethods.browse = function() {
   if (this.isTallEnough(2)) {
     this.eat();
   } else {

@@ -36,7 +36,7 @@ var browse = function() {
   }
 };
 
-var giraffeMaker = function(name, height) {
+var GiraffeMaker = function(name, height) {
   var newGiraffe = {};
   newGiraffe.name = name;
   newGiraffe.height = height;
