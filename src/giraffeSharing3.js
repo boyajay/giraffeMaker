@@ -1,4 +1,3 @@
-//everything consolidated into a single global variable.
 GiraffeMaker.giraffeMethods = {};
 
 GiraffeMaker.giraffeMethods.isTallEnough = function(treeHeight) {
